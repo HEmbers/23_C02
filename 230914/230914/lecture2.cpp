@@ -13,5 +13,6 @@ int main()
 
 	printf("문자 출력: %c\n", ch);
 	printf("문자열 출력: %s\n", str);
+
 	return 0;
 }
