@@ -2,10 +2,12 @@
 
 int main()
 {
-	int year,yy;
-	scanf_s("%d", &year);
-	yy = (year % 100 != 0) || (year % 400 == 0) && (year % 4 == 0);
-	printf("%d", yy);
+	int input, year;
+	scanf_s("%d", &input);
+
+	year = ((input % 4 == 0) && !(input % 100 == 0)) || (input % 400 == 0);
+	printf("%d\n", year);
+
 	return 0;
 
 }
