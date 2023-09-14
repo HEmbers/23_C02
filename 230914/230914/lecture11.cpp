@@ -14,5 +14,6 @@ int main()
 			printf("| X |");
 		printf("\n------------------\n");
 	}
+
 	return 0;
 }
