@@ -8,6 +8,7 @@ int main()
 	while (a <= 9) {
 		if (a == 5) {
 			a++;
+
 			continue;
 		}
 		while (b <= 9) {
