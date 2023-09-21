@@ -1,16 +1,16 @@
 #include<stdio.h>
 
-int prime(int num);
+int isPrime(int num);
 
 int main()
 {
 	int num;
 	scanf_s("%d", &num);
-	printf("%d\n", prime(num));
+	printf("%d\n", isPrime(num));
 	return 0;
 }
 
-int prime(int num)
+int isPrime(int num)
 {
 	for (int div = num - 1; div > 1; div--) {
 		if (num % div == 0)
