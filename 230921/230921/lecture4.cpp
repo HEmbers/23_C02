@@ -3,33 +3,28 @@
 #include<time.h>
 #include<math.h>
 
-int main()
+int main(void)
 {
-	double x = 0;
-	double y = 0;
-	int count = 0, circle = 0,per=0,pi=0;
+	int per = 100;
+	double x = 0, y = 0, count = 0, inside = 0;
 	srand(time(NULL));
 
-	while (count < 100000) {
+	while (count < 10000)
+	{
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
 		count++;
 
-		if ((x * x) + (y * y) <= 1) {
-			circle++;
-		}
-		printf("%d번 진행 원주율 %f", count, (circle / count) * 4);
+		if ((x * x) + (y * y) <= 1)
+			inside++;
+		printf("%.2lf%%진행... 원주율 %.7lf", count / 100, (inside / count) * 4);
 		for (int a = 0; a < per; a += 5) {
-		printf("■");
+			printf("■");
+		}
+		for (int b = 100; b >=per; b -= 5) {
+			printf("□");
+		}
+		printf("\n");
 	}
-	printf("\n");
-
-	}
-
-	}
-
-
-	pi = 4.0 * count / circle;
-
-	printf("%f\n", pi);
+	return 0;
 }
