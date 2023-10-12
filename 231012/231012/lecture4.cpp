@@ -4,7 +4,7 @@ void swap(int *pa, int*pb);
 int main()
 {
 	int a = 10, b=500;
-	printf("%d %d", a, b);
+	printf("%d %d\n", a, b);
 	swap(&a, &b);
 	printf("%d %d", a, b);
 }
