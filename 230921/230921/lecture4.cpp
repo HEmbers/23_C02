@@ -20,7 +20,7 @@ int main(void)
 		if (sqrt(x * x + y * y) <= 1.0)
 			inside++;
 		if (count %10000000 == 0) {
-			printf("%d%%진행... 원주율 : %lf", count /10000000, (double)(inside / count) * 4);
+			printf("%d%%진행... 원주율 :  %lf", count /10000000, (double)(inside / count) * 4);
 			bar(count, 1000000000);
 			printf("\n");
 		}
