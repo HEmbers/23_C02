@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 typedef struct _NODE {
 	int data;
 	struct _NODE* next;
@@ -14,6 +15,46 @@ void print_list(NODE* head)
 		printf("%d ", p->data);
 	}
 	printf("\n");
+}
+
+void insert_node_last(NODE* head, int data)
+{
+	NODE* new_node = (NODE*)malloc(sizeof(NODE));
+	new_node->data = data;
+
+	NODE* p = head;
+	while (p->next != NULL) {
+		p = p->next;
+	}
+	p->next = new_node;
+	new_node->next = NULL;
+}
+
+void(insert_node_first(NODE* head, int data)) {
+	NODE* new_node = (NODE*)malloc(sizeof(NODE));
+	new_node->data = data;
+
+	new_node->next = head->next;
+	head->next = new_node;
+
+}
+
+void delete_node_first(NODE* head)
+{
+	NODE* p = head->next->next;
+	free(head->next);
+	head->next = p;
+}
+
+void delete_node_last(NODE* head) {
+	NODE* p_prev=NULL;
+	NODE* p = head;
+	while (p->next != NULL) {
+		p_prev = p;
+		p = p->next;
+	}
+	free(p);
+	p_prev->next = NULL;
 }
 
 int main()
@@ -38,7 +79,17 @@ int main()
 	n2->next = n3;
 
 	print_list(head);
-	
+
+	insert_node_last(head, 4);
+	insert_node_last(head, 5);
+	print_list(head);
+	insert_node_first(head,6);
+	print_list(head);
+	delete_node_first(head);
+	print_list(head);
+	delete_node_last(head);
+	print_list(head);
+
 	return 0;
 
 }
